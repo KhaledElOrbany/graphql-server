@@ -1,0 +1,41 @@
+{
+	"info": {
+		"_postman_id": "b656e921-1090-485f-82cb-d0d7958fddc1",
+		"name": "GraphQL",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27749167"
+	},
+	"item": [
+		{
+			"name": "Query",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query ExampleQuery($id: ID!) {\n  author(id: $id) {\n    id,\n    name,\n    reviews {\n      id,\n      rating,\n      content\n    }\n  }\n}",
+						"variables": "{\n  \"id\": \"2\"\n}"
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
